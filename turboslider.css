@@ -1,0 +1,9 @@
+.turboslider-container {
+    position: relative;
+}
+
+.turboslider-slide {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
