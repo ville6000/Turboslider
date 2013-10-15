@@ -5,13 +5,14 @@
 (function ($) {
   $.fn.turboslider = function (option, settings) {
     var _settings, 
-      plugin;
+      plugin,
+      $elem;
 
     return this.each(function () {
-      _settings = $.extend({}, $.fn.turboslider.defaultSettings, settings || {}),
-        $elem = $(this),
-        plugin = new Turboslider(_settings, $elem);
-        plugin.init();
+      _settings = $.extend({}, $.fn.turboslider.defaultSettings, settings || {});
+      $elem = $(this);
+      plugin = new Turboslider(_settings, $elem);
+      plugin.init();
     });
   };
 
@@ -32,25 +33,11 @@
       slide;
 
     this.$elem.addClass("turboslider-container");
-
     this.$elem.children().each(function (idx, el) {
       slide = $(el);
       slide.addClass("turboslider-slide");
       self.slides.push(slide);
-
-      // Hide inactive slides
-      if (idx > 0) {
-        slide.hide();
-      }
     });
-
-    if (this.slides.length === 0) {
-      if (console && console.log) {
-        console.log("Nothing to slide");
-      }
-
-      return this;
-    }
 
     this.swapImage();
 
