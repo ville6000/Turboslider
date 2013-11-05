@@ -1,9 +1,27 @@
-.turboslider-container {
+.turboslider {
     position: relative;
+    overflow: hidden;
+}
+
+.turboslider-images {
+    overflow: hidden;
 }
 
 .turboslider-slide {
-    left: 0;
-    position: absolute;
-    top: 0;
+    float: left;
+}
+
+.turboslider-pager {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.turboslider-pager-item {
+    padding: 15px;
+    margin-right: 10px;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background: #c7c7c7;
 }
